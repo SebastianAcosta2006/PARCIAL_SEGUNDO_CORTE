@@ -8,8 +8,6 @@ else:
     from typing.io import TextIO
 
 def serializedATN():
-    # Nota: Este vector de números representa la lógica interna del autómata.
-    # Se deja la estructura base pero adaptada a la nueva cantidad de tokens (18).
     return [
         4,0,18,250,6,-1,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,
         2,6,7,6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,
@@ -26,7 +24,7 @@ class NoSQLLexer(Lexer):
 
     decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
 
-    # Tokens de puntuación y operadores
+    # Tokens de puntuacion y operadores
     T__0 = 1 # ,
     T__1 = 2 # ;
     T__2 = 3 # (
@@ -37,14 +35,14 @@ class NoSQLLexer(Lexer):
     T__7 = 8 # <
     T__8 = 9 # >
 
-    # Palabras clave en español
+    # crude en españoll
     AGREGAR = 10
     OBTENER = 11
     CAMBIAR = 12
     QUITAR = 13
     TODO = 14
 
-    # Tipos de datos
+    # yipos de datos
     VAL_NUMERO = 15
     VAL_TEXTO = 16
     IDENTIFICADOR = 17
