@@ -1,19 +1,19 @@
-# Generated from izqNormal.g4 by ANTLR 4.13.2
+# Generated from izq.g4 by ANTLR 4.13.2
 from antlr4 import *
 if __name__ == "__main__":
-    import izqNormalParser
+    import izqParser
 else:
-    from .izqNormalParser import izqNormalParser
+    from .izqParser import izqParser
 
-class izqNormalListener(ParseTreeListener):
-    def enterInicio(self, ctx:izqNormalParser.InicioContext): pass
-    def exitInicio(self, ctx:izqNormalParser.InicioContext): pass
+class izqListener(ParseTreeListener):
+    def enterInicio(self, ctx:izqParser.InicioContext): pass
+    def exitInicio(self, ctx:izqParser.InicioContext): pass
 
-    def enterCalculo(self, ctx:izqNormalParser.CalculoContext): pass
-    def exitCalculo(self, ctx:izqNormalParser.CalculoContext): pass
+    def enterCalculo(self, ctx:izqParser.CalculoContext): pass
+    def exitCalculo(self, ctx:izqParser.CalculoContext): pass
 
-    def enterProducto(self, ctx:izqNormalParser.ProductoContext): pass
-    def exitProducto(self, ctx:izqNormalParser.ProductoContext): pass
+    def enterProducto(self, ctx:izqParser.ProductoContext): pass
+    def exitProducto(self, ctx:izqParser.ProductoContext): pass
 
-    def enterValor_base(self, ctx:izqNormalParser.Valor_baseContext): pass
-    def exitValor_base(self, ctx:izqNormalParser.Valor_baseContext): pass
+    def enterValor_base(self, ctx:izqParser.Valor_baseContext): pass
+    def exitValor_base(self, ctx:izqParser.Valor_baseContext): pass
