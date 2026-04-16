@@ -3,20 +3,20 @@ import os
 import time
 from antlr4 import *
 
-# Configuración de rutas para importar desde la carpeta GRAMATICA
+# configuracion de rutas para importar desde la carpeta gramatica
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'GRAMATICA')))
 
-# Importes ajustados a tus nuevos nombres de archivo
+# importes ajustados a tus nuevos nombres de archivo
 from GRAMATICA.izqLexer import izqLexer
 from GRAMATICA.izqParser import izqParser
-from visitorIN import VisitorCalculadora # El que definimos anteriormente
+from visitorIN import VisitorCalculadora 
 
 class MotorCalculadora:
     def __init__(self):
         self.visitor = VisitorCalculadora()
 
     def procesar_linea(self, texto):
-        # Medición de alta precisión con perf_counter
+        
         t_inicio = time.perf_counter()
         
         input_stream = InputStream(texto)
@@ -24,11 +24,11 @@ class MotorCalculadora:
         token_stream = CommonTokenStream(lexer)
         parser = izqParser(token_stream)
 
-        # Desactivamos errores en consola para manejar nuestra propia salida
+       
         lexer.removeErrorListeners()
         parser.removeErrorListeners()
 
-        # 'inicio' es la regla principal de nuestra nueva gramática
+        # regla principalde gramaticad
         arbol = parser.inicio()
         t_final = time.perf_counter()
         duracion = t_final - t_inicio
