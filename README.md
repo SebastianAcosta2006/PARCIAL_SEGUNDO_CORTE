@@ -1,5 +1,6 @@
 # PARCIAL_SEGUNDO_CORTE
 contiene el desarrollo completo del taller de lenguajes de programación, abarcando desde el diseño de gramáticas NoSQL hasta la implementación de algoritmos de análisis sintáctico manuales y automáticos.
+
 Estructura del Proyecto
 ├── punto1y2/
 │   ├── gramatica/   
