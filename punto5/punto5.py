@@ -2,7 +2,6 @@ import re
 
 class DescendenteRecursivo:
     def __init__(self, texto):
-        # Tokenizador simple: separa palabras, números y operadores
         self.tokens = re.findall(r'[a-zA-Z]+|[0-9]+|==|=|[;]', texto)
         self.pos = 0
         self.token_actual = self.tokens[self.pos] if self.tokens else None
@@ -11,7 +10,6 @@ class DescendenteRecursivo:
     def error(self, esperado):
         raise SyntaxError(f"Error: se esperaba '{esperado}' pero se encontró '{self.token_actual}'")
 
-    # --- FUNCIÓN DE EMPAREJAMIENTO (MATCH) ---
     def match(self, esperado):
         if self.token_actual == esperado:
             self.pos += 1
@@ -21,9 +19,7 @@ class DescendenteRecursivo:
                 self.token_actual = None
         else:
             self.error(esperado)
-
-    # --- REGLAS DE LA GRAMÁTICA ---
-
+#reglas
     def parsear(self):
         """Punto de entrada: decide si es asignación o condicional"""
         if self.token_actual == "if":
@@ -39,12 +35,11 @@ class DescendenteRecursivo:
     def asignacion(self):
         """Regla: id = numero"""
         print(f"Procesando Asignación...")
-        # Validamos que el primer token sea un identificador (letras)
         if str(self.token_actual).isalpha():
             self.pos += 1 # Consumimos el ID manualmente o con lógica extra
             self.token_actual = self.tokens[self.pos] if self.pos < len(self.tokens) else None
             self.match("=")
-            # Validamos que sea un número
+          
             if str(self.token_actual).isdigit():
                 self.match(self.token_actual)
             else:
@@ -57,7 +52,6 @@ class DescendenteRecursivo:
         print(f"Procesando Condicional...")
         self.match("if")
         
-        # Validar ID
         if str(self.token_actual).isalpha():
             self.pos += 1
             self.token_actual = self.tokens[self.pos] if self.pos < len(self.tokens) else None
@@ -65,7 +59,6 @@ class DescendenteRecursivo:
         
         self.match("==")
         
-        # Validar número
         if str(self.token_actual).isdigit():
             self.match(self.token_actual)
         else: self.error("número")
@@ -73,7 +66,6 @@ class DescendenteRecursivo:
         self.match("then")
         self.asignacion()
 
-# --- PRUEBAS ---
 if __name__ == "__main__":
     print("--- Prueba 1: Asignación ---")
     p1 = DescendenteRecursivo("x = 10")
@@ -85,7 +77,7 @@ if __name__ == "__main__":
 
     print("\n--- Prueba 3: Error ---")
     try:
-        p3 = DescendenteRecursivo("if x = 10") # Error: falta el '==' y el 'then'
+        p3 = DescendenteRecursivo("if x = 10") 
         p3.parsear()
     except SyntaxError as e:
         print(e)
