@@ -1,0 +1,8 @@
+<sent>          ::= <sent_cerrada>
+                  | <sent_abierta>
+
+<sent_cerrada>  ::= "if" <expr> "then" <sent_cerrada> "else" <sent_cerrada>
+                  | <otras>
+
+<sent_abierta>  ::= "if" <expr> "then" <sent>
+                  | "if" <expr> "then" <sent_cerrada> "else" <sent_abierta>
