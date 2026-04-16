@@ -1,0 +1,44 @@
+/* Registro de pacientes en la Veterinaria */
+AGREGAR(mascotas, {
+    nombre -> "Rocco",
+    especie -> "Canino",
+    raza -> "Golden Retriever",
+    edad -> 4,
+    historial -> { ultima_vacuna -> "2025-12-10", alergias -> "Ninguna" }
+});
+
+AGREGAR(mascotas, {
+    nombre -> "Luna",
+    especie -> "Felino",
+    raza -> "Persa",
+    edad -> 2,
+    propietario -> { celular -> 3105556677, ciudad -> "Bogotá" }
+});
+
+/* Registro de inventario médico usando colecciones < > */
+AGREGAR(farmacia, {
+    medicamento -> "Desparasitante",
+    stock -> 150,
+    presentaciones -> <"Tableta", "Jarabe", "Inyectable">,
+    proveedor -> "BioVet"
+});
+
+/* Consultas de lectura */
+OBTENER(mascotas);
+
+OBTENER(TODO);
+
+/* Actualización: Rocco cumplió años y tiene nuevo historial */
+CAMBIAR(mascotas, {
+    edad -> 5,
+    estado -> "Saludable"
+});
+
+/* Verificación de la mascota actualizada */
+OBTENER(mascotas);
+
+/* El medicamento se agotó, eliminamos la entrada de farmacia */
+QUITAR(farmacia);
+
+/* Verificación final del sistema */
+OBTENER(TODO);

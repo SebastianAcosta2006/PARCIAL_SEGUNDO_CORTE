@@ -1,0 +1,39 @@
+<inicio>          ::= <operacion>+
+
+<operacion>       ::= <cmd_insertar>
+                    | <cmd_buscar>
+                    | <cmd_modificar>
+                    | <cmd_remover>
+
+<cmd_insertar>    ::= "AGREGAR" "(" <id_entidad> "," <estructura_datos> ")" ";"
+
+<cmd_buscar>      ::= "OBTENER" "(" <seleccion_campos> ")" ";"
+
+<cmd_modificar>   ::= "CAMBIAR" "(" <id_entidad> "," <estructura_datos> ")" ";"
+
+<cmd_remover>     ::= "QUITAR" "(" <seleccion_campos> ")" ";"
+
+<seleccion_campos> ::= "TODO"
+                    | <id_entidad> { "," <id_entidad> }
+
+<estructura_datos> ::= "{" <asignacion> { "," <asignacion> } "}"
+                    | "{" "}"
+
+<asignacion>      ::= <id_entidad> "->" <dato>
+
+<dato>            ::= <VAL_NUMERO>
+                    | <VAL_TEXTO>
+                    | <id_entidad>
+                    | <coleccion_datos>
+                    | <estructura_datos>
+
+<coleccion_datos> ::= "<" ">"
+                    | "<" <dato> { "," <dato> } ">"
+
+<id_entidad>      ::= <IDENTIFICADOR>
+
+<VAL_NUMERO>      ::= [ "-" ] <digito>+ [ "." <digito>+ ]
+
+<VAL_TEXTO>       ::= '"' <caracter>* '"'
+
+<IDENTIFICADOR>   ::= <letra> { <letra> | <digito> | "_" }
