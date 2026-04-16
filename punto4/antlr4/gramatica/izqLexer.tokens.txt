@@ -1,0 +1,10 @@
+OP_SUMA=1
+OP_RESTA=2
+OP_MULT=3
+OP_DIV=4
+VAL_NUMERO=5
+ESPACIOS=6
+'+'=1
+'-'=2
+'*'=3
+'/'=4
