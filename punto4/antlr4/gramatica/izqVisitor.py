@@ -1,19 +1,19 @@
-# Generated from izqNormal.g4 by ANTLR 4.13.2
+# Generated from izq.g4 by ANTLR 4.13.2
 from antlr4 import *
 if __name__ == "__main__":
-    import izqNormalParser
+    import izqParser
 else:
-    from .izqNormalParser import izqNormalParser
+    from .izqParser import izqParser
 
-class izqNormalVisitor(ParseTreeVisitor):
-    def visitInicio(self, ctx:izqNormalParser.InicioContext):
+class izqVisitor(ParseTreeVisitor):
+    def visitInicio(self, ctx:izqParser.InicioContext):
         return self.visitChildren(ctx)
 
-    def visitCalculo(self, ctx:izqNormalParser.CalculoContext):
+    def visitCalculo(self, ctx:izqParser.CalculoContext):
         return self.visitChildren(ctx)
 
-    def visitProducto(self, ctx:izqNormalParser.ProductoContext):
+    def visitProducto(self, ctx:izqParser.ProductoContext):
         return self.visitChildren(ctx)
 
-    def visitValor_base(self, ctx:izqNormalParser.Valor_baseContext):
+    def visitValor_base(self, ctx:izqParser.Valor_baseContext):
         return self.visitChildren(ctx)
