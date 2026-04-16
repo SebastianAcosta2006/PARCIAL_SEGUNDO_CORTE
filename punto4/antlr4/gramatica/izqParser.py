@@ -1,4 +1,4 @@
-# Generated from izqNormal.g4 by ANTLR 4.13.2
+# Generated from izq.g4 by ANTLR 4.13.2
 from antlr4 import *
 from io import StringIO
 import sys
@@ -26,7 +26,7 @@ def serializedATN():
         1,0,0,0,45,7,1,0,0,0,5,22,24,34,36,44
     ]
 
-class izqNormalParser ( Parser ):
+class izqParser ( Parser ):
     atn = ATNDeserializer().deserialize(serializedATN())
     decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
     sharedContextCache = PredictionContextCache()
@@ -40,5 +40,3 @@ class izqNormalParser ( Parser ):
         self.checkVersion("4.13.2")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
-
-    # ... (Se omiten métodos internos de reglas por brevedad, pero esta es la estructura base necesaria)
