@@ -4,12 +4,11 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Configuración de rutas
+# configuracion de rutas
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE_DIR)
 sys.path.insert(0, os.path.join(BASE_DIR, "GRAMATICA"))
 
-# Importes de tus módulos
 from visitorIN import VisitorCalculadora
 from GRAMATICA.izqLexer import izqLexer
 from GRAMATICA.izqParser import izqParser
@@ -34,7 +33,6 @@ class AnalizadorRendimiento:
         parser.removeErrorListeners()
         tree = parser.inicio()
         
-        # Evaluación simple para verificar corrección
         resultado = None
         if parser.getNumberOfSyntaxErrors() == 0:
             try:
@@ -45,7 +43,7 @@ class AnalizadorRendimiento:
         return time.perf_counter() - inicio, resultado
 
     def medir_cyk(self, linea):
-        # Tokenización manual para el algoritmo CYK
+    
         tokens = []
         for char in linea.replace(" ", ""):
             if char.isdigit():
