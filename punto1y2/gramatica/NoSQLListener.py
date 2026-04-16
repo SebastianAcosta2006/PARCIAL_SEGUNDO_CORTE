@@ -7,35 +7,34 @@ else:
 
 class NoSQLVisitor(ParseTreeVisitor):
 
-    # Visitar el inicio del programa
+    # inicio del programa
     def visitInicio(self, ctx:NoSQLParser.InicioContext):
         return self.visitChildren(ctx)
 
-    # Visitar operaciones individuales
+    # operaciones individuales
     def visitOperacion(self, ctx:NoSQLParser.OperacionContext):
         return self.visitChildren(ctx)
 
-    # Lógica para AGREGAR
+    # logicaagregar
     def visitCmd_insertar(self, ctx:NoSQLParser.Cmd_insertarContext):
         print(f"Ejecutando inserción en la colección...")
         return self.visitChildren(ctx)
 
-    # Lógica para OBTENER
+    # logicaobtener
     def visitCmd_buscar(self, ctx:NoSQLParser.Cmd_buscarContext):
         print(f"Buscando datos...")
         return self.visitChildren(ctx)
 
-    # Lógica para CAMBIAR
+    # logicacambiar
     def visitCmd_modificar(self, ctx:NoSQLParser.Cmd_modificarContext):
         print(f"Modificando registros...")
         return self.visitChildren(ctx)
 
-    # Lógica para QUITAR
+    # logicaquitar
     def visitCmd_remover(self, ctx:NoSQLParser.Cmd_removerContext):
         print(f"Eliminando datos de la entidad...")
         return self.visitChildren(ctx)
-
-    # Manejo de IDs y Datos
+        
     def visitId_entidad(self, ctx:NoSQLParser.Id_entidadContext):
         return ctx.getText()
 
