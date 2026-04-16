@@ -1,4 +1,4 @@
-# Generated from izqNormal.g4 by ANTLR 4.13.2
+# Generated from izq.g4 by ANTLR 4.13.2
 from antlr4 import *
 from io import StringIO
 import sys
@@ -26,7 +26,7 @@ def serializedATN():
         31,34,38,1,6,0,0
     ]
 
-class izqNormalLexer(Lexer):
+class izqLexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -51,7 +51,7 @@ class izqNormalLexer(Lexer):
     ruleNames = [ "OP_SUMA", "OP_RESTA", "OP_MULT", "OP_DIV", "VAL_NUMERO", 
                   "ESPACIOS", "DIGITO" ]
 
-    grammarFileName = "izqNormal.g4"
+    grammarFileName = "izq.g4"
 
     def __init__(self, input=None, output:TextIO = sys.stdout):
         super().__init__(input, output)
