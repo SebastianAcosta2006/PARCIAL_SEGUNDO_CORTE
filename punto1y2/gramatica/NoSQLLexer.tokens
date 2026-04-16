@@ -1,4 +1,4 @@
-# Tokens de Control y Puntuación
+# tokens
 T__0 = 1    # ','
 T__1 = 2    # ';'
 T__2 = 3    # '('
@@ -9,14 +9,14 @@ T__6 = 7    # '->'
 T__7 = 8    # '<'
 T__8 = 9    # '>'
 
-# Palabras Clave del Lenguaje (CRUD)
+# crud en español
 AGREGAR = 10
 OBTENER = 11
 CAMBIAR = 12
 QUITAR = 13
 TODO = 14
 
-# Definiciones de Datos
+# definiciones de Datos
 VAL_NUMERO = 15
 VAL_TEXTO = 16
 IDENTIFICADOR = 17
