@@ -54,12 +54,12 @@ class NoSQLParser(Parser):
     decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
     sharedContextCache = PredictionContextCache()
 
-    # Tipos de Tokens (Sincronizados con el Lexer)
+    #tipos de Tokens 
     T__0=1; T__1=2; T__2=3; T__3=4; T__4=5; T__5=6; T__6=7; T__7=8; T__8=9
     AGREGAR=10; OBTENER=11; CAMBIAR=12; QUITAR=13; TODO=14
     VAL_NUMERO=15; VAL_TEXTO=16; IDENTIFICADOR=17; ESPACIOS=18
 
-    # Nombres de las Reglas
+    # nombres de las Reglas
     RULE_inicio = 0
     RULE_operacion = 1
     RULE_cmd_insertar = 2
@@ -79,10 +79,6 @@ class NoSQLParser(Parser):
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
-    # --- Implementación de las Reglas Subelementales ---
-    # (Aquí irían los métodos de cada regla como inicio(), operacion(), etc.)
-    # Por brevedad en la respuesta, se incluyen las cabeceras principales:
-
     class InicioContext(ParserRuleContext):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -93,12 +89,9 @@ class NoSQLParser(Parser):
         self.enterRule(localctx, 0, self.RULE_inicio)
         try:
             self.enterOuterAlt(localctx, 1)
-            # Lógica para iterar operaciones
             self.exitRule()
         except RecognitionException as re:
             localctx.exception = re
             self._interp.reportError(self, re)
             self._errHandler.recover(self, re)
         return localctx
-
-    # ... Métodos similares para cmd_insertar, cmd_buscar, etc.
