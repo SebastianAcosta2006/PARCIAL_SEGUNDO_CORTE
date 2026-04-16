@@ -3,15 +3,15 @@ contiene el desarrollo completo del taller de lenguajes de programación, abarca
 Estructura del Proyecto
 ├── punto1y2/
 │   ├── gramatica/   
-                     │   ├── NoSQL.g4
-                     │   ├── NoSQL.interp
-                     │   ├── NoSQL.tokens
-                     │   ├── NoSQLLexer.interp
-                     │   ├── NoSQLLexer.py
-                     │   ├── NoSQLLexer.tokens
-                     │   ├── NoSQLListener.py
-                     │   ├── NoSQLParser.py
-                     │   ├── NoSQL.Vistior.py
+│   ├── NoSQL.g4
+│   ├── NoSQL.interp
+│   ├── NoSQL.tokens
+│   ├── NoSQLLexer.interp
+│   ├── NoSQLLexer.py
+│   ├── NoSQLLexer.tokens
+│   ├── NoSQLListener.py
+│   ├── NoSQLParser.py
+│   ├── NoSQL.Vistior.py
 │   ├── NoSQL_BNF.txt        
 │   ├── entrada.txt         
 │   ├── main.py              
@@ -23,15 +23,15 @@ Estructura del Proyecto
 ├── punto4/
 │   ├── antlr4/
 │   │   ├── gramatica/      
-                       │   ├── izq.g4
-                       │   ├── izq.interp
-                       │   ├── izq.tokens
-                       │   ├── izqLexer.interp
-                       │   ├── izqLexer.py
-                       │   ├── izqLexer.tokens
-                       │   ├── izqListener.py
-                       │   ├── izqParser.py
-                       │   ├── izqVisitor.py
+│   ├── izq.g4
+│   ├── izq.interp
+│   ├── izq.tokens
+│   ├── izqLexer.interp
+│   ├── izqLexer.py
+│   ├── izqLexer.tokens
+│   ├── izqListener.py
+│   ├── izqParser.py
+│   ├── izqVisitor.py
 │   │   ├── main.py         
 │   │   └── visitorIN.py    
 │   ├── algoritmocyk.py      
