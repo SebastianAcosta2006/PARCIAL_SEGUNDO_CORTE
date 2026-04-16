@@ -1,43 +1,43 @@
-/* Registro de pacientes en la Veterinaria */
+/* registro de pacientes en la Veterinaria */
 AGREGAR(mascotas, {
-    nombre -> "Rocco",
-    especie -> "Canino",
-    raza -> "Golden Retriever",
-    edad -> 4,
-    historial -> { ultima_vacuna -> "2025-12-10", alergias -> "Ninguna" }
+    nombre: "rocco",
+    especie: "Canino",
+    raza: "Golden Retriever",
+    edad: 4,
+    historial: { ultima_vacuna:"2026-16-04", alergias: "Ninguna" }
 });
 
 AGREGAR(mascotas, {
-    nombre -> "Luna",
-    especie -> "Felino",
-    raza -> "Persa",
-    edad -> 2,
-    propietario -> { celular -> 3105556677, ciudad -> "Bogotá" }
+    nombre: "Luna",
+    especie: "Felino",
+    raza:  "Persa",
+    edad:  2,
+    propietario: { celular: 3105556677, ciudad:"Bogotá" }
 });
 
-/* Registro de inventario médico usando colecciones < > */
+/* registro de inventario medico usando colecciones < > */
 AGREGAR(farmacia, {
-    medicamento -> "Desparasitante",
-    stock -> 150,
+    medicamento: "Desparasitante",
+    stock: 150,
     presentaciones -> <"Tableta", "Jarabe", "Inyectable">,
-    proveedor -> "BioVet"
+    proveedor: "petcol"
 });
 
-/* Consultas de lectura */
+/* consultas de lectura */
 OBTENER(mascotas);
 
 OBTENER(TODO);
 
-/* Actualización: Rocco cumplió años y tiene nuevo historial */
+/* actualizacion: rocco cumplio años y tiene nuevo historial */
 CAMBIAR(mascotas, {
-    edad -> 5,
-    estado -> "Saludable"
+    edad: 5,
+    estado: "Saludable"
 });
 
-/* Verificación de la mascota actualizada */
+/* verificacion de la mascota actualizada */
 OBTENER(mascotas);
 
-/* El medicamento se agotó, eliminamos la entrada de farmacia */
+/* el medicamento se agoto, eliminamos la entrada de farmacia */
 QUITAR(farmacia);
 
 /* Verificación final del sistema */
